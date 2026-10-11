@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Game Portfolio</title>
+<meta name="description" content="Android game portfolio — playable builds and screenshots.">
+<meta name="theme-color" content="#1b0611">
+<!-- 标签页小图标：内联 SVG，不额外占文件 -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ffd27a'/%3E%3Cstop offset='1' stop-color='%23ff5f95'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Cpath d='M32 11l6 14.2L53 28l-11.6 9.7L44.8 53 32 45.2 19.2 53l3.4-15.3L11 28l15-2.8z' fill='%23fff6fa'/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="assets/bg.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner wrap">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">&#10022;</span>
+      <span class="brand-name" data-i18n="siteTitle">Game Portfolio</span>
+    </div>
+    <button id="langToggle" class="lang-toggle" type="button">中文</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1 class="hero-title" data-i18n="siteTitle">Game Portfolio</h1>
+    <p class="hero-tag" data-i18n="siteTagline">Android games — design, code, ship.</p>
+    <div class="sparkles" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </section>
+
+  <p id="status" class="status" hidden></p>
+  <section id="grid" class="grid" aria-live="polite"></section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span data-i18n="footerNote">Built as a static site — no frameworks.</span>
+  </div>
+</footer>
+
+<!-- 详情弹窗 -->
+<div id="modal" class="modal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="modal-close" type="button" data-close aria-label="Close">&times;</button>
+
+    <figure class="shot-stage">
+      <img id="mShot" class="shot-main" alt="">
+    </figure>
+    <div id="mStrip" class="shot-strip"></div>
+
+    <div class="modal-info">
+      <div class="modal-head">
+        <div>
+          <h2 id="mTitle"></h2>
+          <p id="mMeta" class="meta"></p>
+        </div>
+        <a id="mApk" class="btn-apk" download>
+          <span data-i18n="downloadApk">Download APK</span>
+        </a>
+      </div>
+      <p id="mIntro" class="intro"></p>
+      <ul id="mTags" class="tags"></ul>
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
